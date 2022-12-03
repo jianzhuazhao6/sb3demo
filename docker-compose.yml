@@ -1,0 +1,17 @@
+version: '3.4'
+services:
+  app:
+    image: sb3demo:0.0.1
+    environment: 
+      postgres_host: sb3demo_db
+    ports:
+      - 18080:8080
+  db:
+    image: postgres
+    restart: always
+    container_name: sb3demo_db
+    hostname: sb3demo_db
+    environment:
+      POSTGRES_USER: zjh 
+      POSTGRES_PASSWORD: abc123
+      POSTGRES_DB: ecom
